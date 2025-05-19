@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
+  const user = route?.params?.user || null;
+
   return (
     <View style={styles.container}>
       {/* App Logo */}
       <View style={styles.logoContainer}>
         <Image
-          source={require('../assets/logo.png')} 
+          source={require('../assetss/logo.png')}
           style={styles.logo}
         />
         <Text style={styles.appName}>Polish Pop</Text>
@@ -16,7 +18,8 @@ const HomeScreen = ({ navigation }) => {
       {/* Nail Art Option */}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('DesignScreen')} 
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('NailArtDesign', { user })}
       >
         <Text style={styles.buttonText}>Nail Art Designs</Text>
       </TouchableOpacity>
@@ -24,9 +27,10 @@ const HomeScreen = ({ navigation }) => {
       {/* Shopping Nails Option */}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('ShoppingScreen')} 
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('Shop')}
       >
-        <Text style={styles.buttonText}>Shopping Nails</Text>
+        <Text style={styles.buttonText}>Shopping NailPaints</Text>
       </TouchableOpacity>
     </View>
   );

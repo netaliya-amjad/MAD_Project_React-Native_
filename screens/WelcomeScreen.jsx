@@ -1,37 +1,68 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const WelcomeScreen = ({ navigation }) => {
+const WelcomeScreen = () => {
+  const navigation = useNavigation();
+
   useEffect(() => {
-    // Navigate to HomeTabs (Bottom Tab Navigator) after 3 seconds
     const timer = setTimeout(() => {
-      navigation.replace('HomeTabs'); // Use replace to avoid going back to WelcomeScreen
-    }, 3000); // 3 seconds
+      navigation.replace('LoginSignupChoice');
+    }, 3000);
 
-    // Cleanup the timer when the component unmounts
     return () => clearTimeout(timer);
   }, [navigation]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Polish Pop 💅</Text>
+      <Image
+        source={require('../assetss/logo.png')} // Updated to use the logo from the 'assetss' folder
+        style={styles.logo}
+      />
+      <Text style={styles.title}>Welcome to</Text>
+      <Text style={styles.brand}>Polish Pop</Text>
+      <Text style={styles.tagline}>Where beauty meets elegance!</Text>
     </View>
   );
 };
 
+export default WelcomeScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff0f5', // soft pink background
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff0f6', // light pink background
+    paddingHorizontal: 20,
+  },
+  logo: {
+    width: 150, // Adjusted size for better visual fit
+    height: 150,
+    marginBottom: 20,
+    borderRadius: 75, // Rounded corners to make the logo more appealing
+    borderWidth: 5, // Border around logo for a stylish touch
+    borderColor: '#c2185b', // Matching border with brand color
+    backgroundColor: '#fff', // White background to make logo stand out
+    padding: 10,
   },
   title: {
-    fontSize: 36,
+    fontSize: 26,
+    color: '#555',
+    fontFamily: 'Arial', // Clean and readable font
+    marginBottom: 5,
+  },
+  brand: {
+    fontSize: 42, // Increased font size for more emphasis
     fontWeight: 'bold',
-    color: '#d63384', // Barbie pink
-    fontFamily: 'Cochin', // Optional, we can change this later to a fancy font
+    color: '#c2185b', // deep pink
+    letterSpacing: 1, // Adding spacing between letters for a modern look
+  },
+  tagline: {
+    fontSize: 18,
+    color: '#777', // Lighter color for the tagline text
+    fontStyle: 'italic',
+    marginTop: 10,
   },
 });
-
-export default WelcomeScreen;
+ 
