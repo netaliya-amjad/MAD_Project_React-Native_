@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "a1aaac63-b5cc-46cc-a47f-501187d31071",
+		"name": "Polish_pop_API'S",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45064462",
+		"_collection_link": "https://netaliya-1422988.postman.co/workspace/Netaliya's-Workspace~6079d7b1-51d9-45f2-8483-b912d685388b/collection/45064462-a1aaac63-b5cc-46cc-a47f-501187d31071?action=share&source=collection_link&creator=45064462"
+	},
+	"item": [
+		{
+			"name": "Signup/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"test\",\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.18.26:5000/signup",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"18",
+						"26"
+					],
+					"port": "5000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzYyNTMyNCwiZXhwIjoxNzQ3NjI4OTI0fQ.dUTKtvXQ5s1nFemNYnfpBVM6NAXzHeVGpH4X1dJnTx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"john_updated\",\r\n  \"email\": \"john_updated@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzYyNTMyNCwiZXhwIjoxNzQ3NjI4OTI0fQ.dUTKtvXQ5s1nFemNYnfpBVM6NAXzHeVGpH4X1dJnTx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/delete-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"delete-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/nailart_Design",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Floral Elegance\",\r\n  \"image_url\": \"https://example.com/image.jpg\",\r\n  \"description\": \"Beautiful floral nail art\",\r\n  \"price\": 25\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/nailart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nailart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/nailart_Design",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/nailart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nailart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post/Bookings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": 1,\r\n  \"nailart_id\": 5,\r\n  \"booking_date\": \"2025-05-20\",\r\n  \"time_slot\": \"10:00 AM\",\r\n  \"artist_name\": \"Sara\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/bookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/user-bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user-bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put/Bookings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"artist_name\": \"Ayesha\",\r\n  \"booking_date\": \"2025-05-21\",\r\n  \"time_slot\": \"11:00 AM\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/bookings/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bookings",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete/Bookings",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/bookings/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bookings",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post/nailpaints",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Red Glow\",\r\n  \"description\": \"Bright red nail paint\",\r\n  \"price\": 10,\r\n  \"image_url\": \"https://example.com/redglow.jpg\",\r\n  \"rating\": 4.5,\r\n  \"reviews_count\": 100,\r\n  \"stock\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/nailpaints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nailpaints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/nailpaints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/nailpaints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nailpaints"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
